@@ -4,6 +4,7 @@
   "description": "practice typescript",
   "main": "index.js",
   "scripts": {
+    "build": "tsc --build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "devwatch": "tsc -w",
     "transpile": "tsc"
