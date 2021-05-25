@@ -1,3 +1,4 @@
+// 트리 구조의 자식 노드 정의
 class QueueNode {
   constructor(public value: string = null) {}
 
@@ -10,11 +11,13 @@ class Queue {
   private tail: QueueNode = null;
   private size: number = 0;
 
+  // 크기 구하는 메소드
   getSize(): number {
     console.log(`current size is ${this.size}`)
     return this.size;
   }
 
+  // 물건 추가 메소드
   push(value: string): void {
     const newOneNode = new QueueNode(value);
     if (!this.tail) {
@@ -28,6 +31,7 @@ class Queue {
     console.log(`${value} 추가 완료`);
   }
 
+  // 물건 삭제 메소드(LIFO)
   pop(): void {
     if (!this.tail) {
       console.log(`empty queue!`);
@@ -45,6 +49,7 @@ class Queue {
     this.size--;
   }
 
+  // 특정 물건의 이름으로 인덱스 찾는 메소드
   searchIdxByName(name: string): number {
     if (!this.tail) {
       console.log(`empty queue!`);
@@ -67,10 +72,11 @@ class Queue {
       }
 
       console.log(`there is no ${name} in this queue`)
-      return
+      return;
     }
   }
 
+  // 해당 위치 인덱스에 있는 물건 이름 찾는 메소드
   searchNameByIdx(index: number): string {
     if (!this.tail || index > this.size - 1) {
       console.log(`empty queue or input idx is bigger than queue length`);
