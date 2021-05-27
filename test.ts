@@ -1,22 +1,13 @@
-class Person {
-  static HEIGHT: number = 160;
-  constructor(private name: string, private age: number) {
-
-  }
-
-  hello(): void {
-    console.log(`${this.name} ㅎㅇ`);
-  }
-
-  getName(): string {
-    return this.name;
-  }
-
-  setName(newName: string): void {
-    this.name = newName
+function hello(constructFn: Function) {
+  constructFn.prototype.hello = function() {
+    console.log('hello');
   }
 }
 
-const person: Person = new Person('JS', 25);
-person.setName('JSJSJS')
-console.log(person.getName());
+@hello
+class Person {
+
+}
+
+const p = new Person();
+p.hello();
