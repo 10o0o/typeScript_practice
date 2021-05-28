@@ -1,4 +1,8 @@
-// 트리 구조의 자식 노드 정의
+// tslint:disable-next-line: max-classes-per-file
+import { Queue, QueueNode } from '../queue/queue';
+import { Stack } from '../stack/stack'
+
+// // 트리 구조의 자식 노드 정의
 class DequeNode {
   constructor(public value: string = null) {}
 
@@ -13,9 +17,8 @@ class Deque {
   private size: number = 0;
 
   // 크기 구하는 메소드
-  getSize(): number {
-    console.log(`current size is ${this.size}`)
-    return this.size;
+  getSize() {
+    Object.setPrototypeOf(Stack.prototype.getSize)
   }
 
   // 앞에서 물건 추가 메소드
@@ -134,41 +137,68 @@ class Deque {
 // stack, queue merge
 // 제네릭 적용하여 타입 적용 원하는대로
 
-const deque = new Deque();
+// class DequeNode {
 
-deque.push('test1');
-deque.getSize();
-deque.push('test2');
-deque.getSize();
-deque.push('test3');
-deque.getSize();
-deque.push('test4');
-deque.getSize();
-deque.unshift('test1');
-deque.getSize();
-deque.unshift('test2');
-deque.getSize();
-deque.unshift('test3');
-deque.getSize();
-deque.unshift('test4');
-deque.getSize();
-deque.searchIdxByName('test5')
-deque.searchIdxByName('test4')
-deque.searchNameByIdx(1);
-deque.searchNameByIdx(0)
-deque.pop();
-deque.getSize();
-deque.pop();
-deque.getSize();
-deque.pop();
-deque.getSize();
-deque.pop();
-deque.getSize();
-deque.shift();
-deque.getSize();
-deque.shift();
-deque.getSize();
-deque.shift();
-deque.getSize();
-deque.shift();
-deque.getSize();
+// }
+
+// function merge(class1, class2):any {
+//   // console.log(class1, class2);
+  
+//   for (const key in class1) {
+//     Deque[key] = class1[key];
+//   }
+
+//   for (const key in class2) {
+//     Deque[key] = class2[key];
+//   }
+// }
+
+// merge(new Queue(), new Stack());
+
+// console.log(Deque);
+
+// const combine = {...new Queue(), ...new Stack()}
+
+// console.log(combine);
+
+
+console.log(Stack.prototype.getSize)
+
+// const deque = new Deque();
+
+// deque.push('test1');
+// deque.getSize();
+// deque.push('test2');
+// deque.getSize();
+// deque.push('test3');
+// deque.getSize();
+// deque.push('test4');
+// deque.getSize();
+// deque.unshift('test1');
+// deque.getSize();
+// deque.unshift('test2');
+// deque.getSize();
+// deque.unshift('test3');
+// deque.getSize();
+// deque.unshift('test4');
+// deque.getSize();
+// deque.searchIdxByName('test5')
+// deque.searchIdxByName('test4')
+// deque.searchNameByIdx(1);
+// deque.searchNameByIdx(0)
+// deque.pop();
+// deque.getSize();
+// deque.pop();
+// deque.getSize();
+// deque.pop();
+// deque.getSize();
+// deque.pop();
+// deque.getSize();
+// deque.shift();
+// deque.getSize();
+// deque.shift();
+// deque.getSize();
+// deque.shift();
+// deque.getSize();
+// deque.shift();
+// deque.getSize();

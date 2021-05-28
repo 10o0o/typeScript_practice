@@ -1,14 +1,14 @@
 // 트리 구조의 자식 노드 정의
-class StackNode {
-  constructor(public value: string = null) {}
+export class StackNode<T> {
+  constructor(public value: T= null) {}
 
-  public next: StackNode = null;
+  public next: StackNode<T> = null;
 }
 
 // tslint:disable-next-line: max-classes-per-file
-class Stack {
-  private head: StackNode = null;
-  private tail: StackNode = null;
+export class Stack<T> {
+  private head: StackNode<T> = null;
+  private tail: StackNode<T> = null;
   private size: number = 0;
 
   // 크기 구하는 메소드
@@ -18,7 +18,7 @@ class Stack {
   }
 
   // 물건 추가 메소드
-  push(value: string): void {
+  push(value: T): void {
     const newStackNode = new StackNode(value);
     if (!this.tail) {
       this.head = newStackNode;
@@ -50,7 +50,7 @@ class Stack {
   }
 
   // 특정 물건의 이름으로 인덱스 찾는 메소드
-  searchIdxByName(name: string): number {
+  searchIdxByName(name: T): number {
     if (!this.tail) {
       console.log(`empty stack!`);
       return;
@@ -77,7 +77,7 @@ class Stack {
   }
 
   // 해당 위치 인덱스에 있는 물건 이름 찾는 메소드
-  searchNameByIdx(index: number): string {
+  searchNameByIdx(index: number): T {
     if (!this.tail || index > this.size - 1) {
       console.log(`empty stack or input idx is bigger than stack length`);
       return;
@@ -96,25 +96,29 @@ class Stack {
   }
 }
 
-const stack = new Stack();
+const stack = new Stack<number>();
 
-stack.push('test1');
-stack.getSize();
-stack.push('test2');
-stack.getSize();
-stack.push('test3');
-stack.getSize();
-stack.push('test4');
-stack.getSize();
-stack.searchIdxByName('test5')
-stack.searchIdxByName('test4')
-stack.searchNameByIdx(1);
-stack.searchNameByIdx(0)
-stack.pop();
-stack.getSize();
-stack.pop();
-stack.getSize();
-stack.pop();
-stack.getSize();
-stack.pop();
-stack.getSize();
+for (const key in Stack.prototype) {
+  console.log(key);
+}
+
+// stack.push(123);
+// stack.getSize();
+// stack.push(442);
+// stack.getSize();
+// stack.push(5155);
+// stack.getSize();
+// stack.push(666346);
+// stack.getSize();
+// stack.searchIdxByName(123)
+// stack.searchIdxByName(5155)
+// stack.searchNameByIdx(1);
+// stack.searchNameByIdx(0)
+// stack.pop();
+// stack.getSize();
+// stack.pop();
+// stack.getSize();
+// stack.pop();
+// stack.getSize();
+// stack.pop();
+// stack.getSize();

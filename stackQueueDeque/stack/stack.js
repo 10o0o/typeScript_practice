@@ -1,3 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Stack = exports.StackNode = void 0;
 // 트리 구조의 자식 노드 정의
 class StackNode {
     constructor(value = null) {
@@ -5,6 +8,7 @@ class StackNode {
         this.next = null;
     }
 }
+exports.StackNode = StackNode;
 // tslint:disable-next-line: max-classes-per-file
 class Stack {
     constructor() {
@@ -93,24 +97,28 @@ class Stack {
         }
     }
 }
+exports.Stack = Stack;
 const stack = new Stack();
-stack.push('test1');
-stack.getSize();
-stack.push('test2');
-stack.getSize();
-stack.push('test3');
-stack.getSize();
-stack.push('test4');
-stack.getSize();
-stack.searchIdxByName('test5');
-stack.searchIdxByName('test4');
-stack.searchNameByIdx(1);
-stack.searchNameByIdx(0);
-stack.pop();
-stack.getSize();
-stack.pop();
-stack.getSize();
-stack.pop();
-stack.getSize();
-stack.pop();
-stack.getSize();
+for (const key in Stack.prototype) {
+    console.log(key);
+}
+// stack.push(123);
+// stack.getSize();
+// stack.push(442);
+// stack.getSize();
+// stack.push(5155);
+// stack.getSize();
+// stack.push(666346);
+// stack.getSize();
+// stack.searchIdxByName(123)
+// stack.searchIdxByName(5155)
+// stack.searchNameByIdx(1);
+// stack.searchNameByIdx(0)
+// stack.pop();
+// stack.getSize();
+// stack.pop();
+// stack.getSize();
+// stack.pop();
+// stack.getSize();
+// stack.pop();
+// stack.getSize();
