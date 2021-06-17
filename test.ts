@@ -5,4 +5,4 @@ class Deque {}
 Object.setPrototypeOf(Deque, Stack.prototype.getSize)
 Object.setPrototypeOf(Deque, Stack.prototype.searchIdxByName)
 
-console.log(Deque.prototype);
+console.log(Deque.prototype)
