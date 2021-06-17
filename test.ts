@@ -1,13 +1,8 @@
-function hello(constructFn: Function) {
-  constructFn.prototype.hello = function() {
-    console.log('hello');
-  }
-}
+import { Stack } from './stackQueueDeque/stack/stack'
 
-@hello
-class Person {
+class Deque {}
 
-}
+Object.setPrototypeOf(Deque, Stack.prototype.getSize)
+Object.setPrototypeOf(Deque, Stack.prototype.searchIdxByName)
 
-const p = new Person();
-p.hello();
+console.log(Deque.prototype);

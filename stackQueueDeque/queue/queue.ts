@@ -1,14 +1,14 @@
 // 트리 구조의 자식 노드 정의
-class QueueNode {
-  constructor(public value: string = null) {}
+export class QueueNode<T> {
+  constructor(public value: T = null) {}
 
-  public prev: QueueNode = null;
+  public prev: QueueNode<T> = null;
 }
 
 // tslint:disable-next-line: max-classes-per-file
-class Queue {
-  private head: QueueNode = null;
-  private tail: QueueNode = null;
+export class Queue<T> {
+  private head: QueueNode<T> = null;
+  private tail: QueueNode<T> = null;
   private size: number = 0;
 
   // 크기 구하는 메소드
@@ -18,7 +18,7 @@ class Queue {
   }
 
   // 물건 추가 메소드
-  push(value: string): void {
+  push(value: T): void {
     const newOneNode = new QueueNode(value);
     if (!this.tail) {
       this.head = newOneNode;
@@ -50,7 +50,7 @@ class Queue {
   }
 
   // 특정 물건의 이름으로 인덱스 찾는 메소드
-  searchIdxByName(name: string): number {
+  searchIdxByName(name: T): number {
     if (!this.tail) {
       console.log(`empty queue!`);
       return;
@@ -77,7 +77,7 @@ class Queue {
   }
 
   // 해당 위치 인덱스에 있는 물건 이름 찾는 메소드
-  searchNameByIdx(index: number): string {
+  searchNameByIdx(index: number): T {
     if (!this.tail || index > this.size - 1) {
       console.log(`empty queue or input idx is bigger than queue length`);
       return;
@@ -98,23 +98,23 @@ class Queue {
 
 const queue = new Queue();
 
-queue.push('test1');
-queue.getSize();
-queue.push('test2');
-queue.getSize();
-queue.push('test3');
-queue.getSize();
-queue.push('test4');
-queue.getSize();
-queue.searchIdxByName('test5')
-queue.searchIdxByName('test4')
-queue.searchNameByIdx(1);
-queue.searchNameByIdx(0)
-queue.pop();
-queue.getSize();
-queue.pop();
-queue.getSize();
-queue.pop();
-queue.getSize();
-queue.pop();
-queue.getSize();
+// queue.push('test1');
+// queue.getSize();
+// queue.push('test2');
+// queue.getSize();
+// queue.push('test3');
+// queue.getSize();
+// queue.push('test4');
+// queue.getSize();
+// queue.searchIdxByName('test5')
+// queue.searchIdxByName('test4')
+// queue.searchNameByIdx(1);
+// queue.searchNameByIdx(0)
+// queue.pop();
+// queue.getSize();
+// queue.pop();
+// queue.getSize();
+// queue.pop();
+// queue.getSize();
+// queue.pop();
+// queue.getSize();
